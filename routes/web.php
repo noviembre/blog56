@@ -17,8 +17,9 @@ Route::namespace('Admin')->prefix('admin')->group(function (){
 
     Route::get('posts', function (){
 
-        return route('welcome', ['name' => 'Erapata', 'age' => '25']);
+        return "123";
     });
 });
 
-Route::get('/{name}/{age}', 'PublicController@index')->name('welcome');
+Route::redirect('/old', '/new', 301);
+
