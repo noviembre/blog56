@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/{name}', 'PublicController@index')->name('welcome');
 
 Route::namespace('Admin')->prefix('admin')->group(function (){
     Route::get('users', 'UsersController@listUsers');
 
     Route::get('posts', function (){
 
-        return route('welcome', 'Erapata');
+        return route('welcome', ['name' => 'Erapata', 'age' => '25']);
     });
 });
+
+Route::get('/{name}/{age}', 'PublicController@index')->name('welcome');
