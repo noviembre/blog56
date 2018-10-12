@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'PublicController@index');
+
+Route::namespace('Admin')->prefix('admin')->group(function (){
+    Route::get('users', 'UsersController@listUsers');
+});
